@@ -1,0 +1,16 @@
+{
+  "base": {
+    "project": "JMart_UI_API_Mobile_Tests_Authomation",
+    "environment": "",
+    "comment": "Test results",
+    "reportLink": "",
+    "language": "ru",
+    "allureFolder": "allure-report/",
+    "enableChart": true
+  },
+  "telegram": {
+    "token": "5586573559:AAF4dL51-oJDwZEy1D-91bpKJkj-6_bTcTA",
+    "chat": "-705218203",
+    "replyTo": ""
+  }
+}
