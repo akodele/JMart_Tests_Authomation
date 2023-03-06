@@ -12,8 +12,8 @@ import static io.restassured.filter.log.LogDetail.STATUS;
 
 public class Specs {
     public static RequestSpecification requestSpec = with()
-            .baseUri("https://jmart.kz")
-            .basePath("/api")
+            .baseUri("https://test5.jmart.kz")
+            .basePath("/gw")
             .log().uri()
             .log().headers()
             .log().body()

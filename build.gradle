@@ -40,7 +40,8 @@ dependencies {
             'org.jsoup:jsoup:1.7.2',
             'org.aeonbits.owner:owner:1.0.11',
             'com.github.javafaker:javafaker:1.0.2',
-            'org.slf4j:slf4j-simple:1.7.32'
+            'org.slf4j:slf4j-simple:1.7.32',
+            'org.projectlombok:lombok:1.18.20'
     )
 }
 
@@ -67,5 +68,17 @@ test {
 task web_test(type: Test) {
     useJUnitPlatform {
         includeTags "web_test"
+    }
+}
+
+task api_test(type: Test) {
+    useJUnitPlatform {
+        includeTags "api_test"
+    }
+}
+
+task mobile_test(type: Test) {
+    useJUnitPlatform {
+        includeTags "mobile_test"
     }
 }
