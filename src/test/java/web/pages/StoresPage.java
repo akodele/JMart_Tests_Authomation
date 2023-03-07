@@ -11,10 +11,10 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class StoresPage {
     SelenideElement
-            cityOfStores=$x("//div[@class='sc-kDTinF fNpZc']");
+            cityOfStores=$x("//div[contains(@class,'ipRYCv')]");
 
     ElementsCollection
-            storeNameElements=$$x("//h2[@class='sc-kDTinF dxwvzv']");
+            storeNameElements=$$x("//h2[contains(@class,'ilVCnM')]");
 
     @Step("Проверяем смену на выбранный город на странице \"Продукты\"")
     public StoresPage checkSelectedCity(String city){

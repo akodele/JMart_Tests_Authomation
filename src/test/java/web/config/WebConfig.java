@@ -3,7 +3,7 @@ package web.config;
 import org.aeonbits.owner.Config;
 
 @Config.Sources({
-        "classpath:web/${env}.properties"
+        "classpath:properties/${env}.properties"
 })
 public interface WebConfig extends Config {
 

@@ -9,18 +9,23 @@ import static com.codeborne.selenide.Selenide.$$x;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class CitySelectModal {
+
+    NewSearchNotificationModal newSearchNotificationModal=new NewSearchNotificationModal();
+
     SelenideElement
-            citySelectTextModal = $x(".//div[@id='styleScroll']"),
-            cityOfStores=$x("//div[@class='sc-kDTinF fNpZc']");
+            cityOfStores=$x("//div[contains(@class,'fAvePO')]");
     ElementsCollection
-            cities=$$x("//div[@class='sc-kDTinF hmiryJ']");
+            cities=$$x("//div[contains(@class,'jYqNeT')]");
+
 
     public void citySelectAndClick(String cityName) {
-        if(citySelectTextModal.is(appear)){
-            cities.findBy(text(cityName)).parent().click();
+        if(cities.first().is(appear)){
+            cities.findBy(text(cityName)).click();
+            newSearchNotificationModal.closeNewSearchModal();
         }else {
+            newSearchNotificationModal.closeNewSearchModal();
             cityOfStores.click();
-            cities.findBy(text(cityName)).parent().click();
+            cities.findBy(text(cityName)).click();
         }
     }
 }

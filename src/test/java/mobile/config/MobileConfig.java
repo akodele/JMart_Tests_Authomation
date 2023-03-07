@@ -3,7 +3,7 @@ package mobile.config;
 import org.aeonbits.owner.Config;
 
 @Config.Sources({
-        "classpath:web/emulator.properties"
+        "classpath:properties/emulator.properties"
 })
 public interface MobileConfig extends Config{
     @Key("login")

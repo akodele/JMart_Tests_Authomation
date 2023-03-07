@@ -10,6 +10,7 @@ public class WebDriver {
             ConfigFactory.create(WebConfig.class, System.getProperties());
 
     public static void configuration() {
+        Configuration.timeout=8000;
         Configuration.browser = webConfig.getBrowser();
         Configuration.browserVersion = webConfig.getBrowserVersion();
         Configuration.browserSize = webConfig.getBrowserSize();
