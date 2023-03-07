@@ -1,6 +1,8 @@
 package api.tests;
 
 import api.AuthAsClient;
+import api.models.ProfileResponseModel;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -31,13 +33,17 @@ public class UserTests {
     void getUserCart(){
         AuthAsClient client=new AuthAsClient();
         String token=client.getToken();
-        given()
+        ProfileResponseModel profile = given()
                 .header("Authorization", "Bearer " + token)
                 .spec(requestSpec)
                 .when()
                 .get("/user/v2/profile")
                 .then()
-                .spec(responseSpec(200));
+                .spec(responseSpec(200)).extract().as(ProfileResponseModel.class);
+        Assertions.assertEquals("РУСТАМ",
+                profile.getData().getUser().getFirstname());
+        Assertions.assertEquals("ЕЛКИН",
+                profile.getData().getUser().getLastname());
 
     }
 }

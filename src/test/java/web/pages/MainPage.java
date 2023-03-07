@@ -48,7 +48,7 @@ public class MainPage {
 
     @Step("Вводим текст для поиска")
     public MainPage search(String searchText){
-        searchField.setValue(searchText).pressEnter();
+        searchField.setValue(searchText);
         return this;
     }
 }
