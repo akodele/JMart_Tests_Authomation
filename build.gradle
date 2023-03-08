@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'io.qameta.allure' version '2.10.0'
+    id "io.freefair.lombok" version "6.0.0-m2"
 }
 
 group 'kz.jmart'
@@ -26,6 +27,7 @@ allure {
     }
 }
 dependencies {
+    implementation 'org.projectlombok:lombok:1.18.26'
     testImplementation (
             'com.codeborne:selenide:6.5.2',
             "io.qameta.allure:allure-selenide:$allureVersion",
@@ -40,8 +42,7 @@ dependencies {
             'org.jsoup:jsoup:1.7.2',
             'org.aeonbits.owner:owner:1.0.11',
             'com.github.javafaker:javafaker:1.0.2',
-            'org.slf4j:slf4j-simple:1.7.32',
-            'org.projectlombok:lombok:1.18.20'
+            'org.slf4j:slf4j-simple:1.7.32'
     )
 }
 

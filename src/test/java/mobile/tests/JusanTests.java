@@ -1,6 +1,7 @@
 package mobile.tests;
 
 import mobile.TestBase;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
@@ -14,17 +15,17 @@ import static io.qameta.allure.Allure.step;
 public class JusanTests extends TestBase {
     @Test
     @Tag("mobile_test")
-    void goToTheArticleTest() {
-        back();
-        step("Type search", () -> {
-            $(accessibilityId("Search Wikipedia")).click();
-            $(id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Selenium");
+    @DisplayName("Проверка отображения кнопки перехода на страницу Jusan Магазина на главной странице приложения Jusan")
+    void checkJmartOnMainPageTest() {
+        //back();
+        step("Закрыть всплывающее окно", () -> {
+            $(id("kz.tsb.app24.debug:id/closeButton")).click();
         });
-        step("Click on the first article", () -> {
-            $$(id("org.wikipedia.alpha:id/page_list_item_title")).first().click();
-        });
-        step("Check text on article", () -> {
-            $(id("pcs-edit-section-title-description")).shouldHave(text("Chemical element, symbol Se and atomic number 34"));
+//        step("Выбрать русский язык приложения", () -> {
+//            $(id("kz.tsb.app24.debug:id/ruButton")).click();
+//        });
+        step("Проверить отображение Jusan Магазина на главной странице", () -> {
+            $$(id("kz.tsb.app24.debug:id/nameTextView")).get(5).shouldHave(text("магазин"));
         });
 
     }

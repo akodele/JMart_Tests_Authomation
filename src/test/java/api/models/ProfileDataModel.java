@@ -9,4 +9,11 @@ public class ProfileDataModel {
     UserModel user;
     ProfileModel[] profiles;
 
+    public ProfileModel[] getProfiles() {
+        return profiles;
+    }
+
+    public UserModel getUser() {
+        return user;
+    }
 }

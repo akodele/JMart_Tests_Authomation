@@ -17,7 +17,8 @@ public class MainPage {
     SelenideElement
             selectedCity=$x("//div[contains(@class,'ipRYCv')]"),
             catalogButton=$x("//div[contains(@class,'cwoqMd')]"),
-            searchField=$x("//input[contains(@class,'jSDdUX')]");
+            searchField=$x("//input[contains(@class,'jSDdUX')]"),
+            searchButton=$x("//div[contains(@class,'eOSudP')]");
 
     ElementsCollection
             mainMenus = $$x("//div[contains(@class,'fnoIFz')]");
@@ -46,9 +47,10 @@ public class MainPage {
         return this;
     }
 
-    @Step("Вводим текст для поиска")
+    @Step("Вводим текст для поиска и нажимаем кнопку поиска")
     public MainPage search(String searchText){
         searchField.setValue(searchText);
+        searchButton.click();
         return this;
     }
 }

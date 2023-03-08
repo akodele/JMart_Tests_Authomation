@@ -24,7 +24,7 @@ public class BrowserstackDriver implements WebDriverProvider {
         }
     }
 
-    @SneakyThrows
+    //@SneakyThrows
     @Nonnull
     @Override
     public WebDriver createDriver(@Nonnull Capabilities capabilities) {

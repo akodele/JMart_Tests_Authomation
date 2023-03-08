@@ -10,6 +10,7 @@ import static com.codeborne.selenide.Selenide.$$x;
 public class ProductsListingPage {
     ElementsCollection
             productsList = $$x("//div[contains(@class,'jMpxUt lnQNbf')]"),
+            productsAddToCartButtons = $$x("//button[contains(@class,'cxEWlG')]"),
             categoriesList = $$x("//ul/li/div[contains(@class,'JAnzX')]"),
             filtersList  = $$x("//div[contains(@class,'hFtCop jnKiqT')]");
 
@@ -36,7 +37,7 @@ public class ProductsListingPage {
 
     @Step("Нажимаем на кнопку \"В корзину\"")
     public ProductsListingPage selectAddToCart() {
-        productsList.first().$x("//div[contains(@class,'cxEWlG')]");
+        productsAddToCartButtons.first().click();
         return this;
     }
 }
