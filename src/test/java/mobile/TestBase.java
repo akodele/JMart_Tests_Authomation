@@ -23,7 +23,7 @@ public class TestBase {
 //                Configuration.browser = EmulatorDriver.class.getName();
 //                break;
 //        }
-        Configuration.browser = EmulatorDriver.class.getName();
+        Configuration.browser = BrowserstackDriver.class.getName();
         Configuration.browserSize = null;
     }
 
@@ -35,9 +35,9 @@ public class TestBase {
 
     @AfterEach
     void addAttachments() {
-        //String sessionId = sessionId().toString();
+        String sessionId = sessionId().toString();
         Attach.pageSource();
-        closeWebDriver();
+        Attach.addVideo(sessionId);
         //if (!System.getProperty("mobile").equals("emulator")) Attach.addVideo(sessionId);
     }
 }
