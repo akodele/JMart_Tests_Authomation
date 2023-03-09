@@ -15,15 +15,14 @@ public class TestBase {
 
     @BeforeAll
     static void beforeAll() {
-//        switch (System.getProperty("mobile")) {
-//            case "browserstack":
-//                Configuration.browser = BrowserstackDriver.class.getName();
-//                break;
-//            case "emulator":
-//                Configuration.browser = EmulatorDriver.class.getName();
-//                break;
-//        }
-        Configuration.browser = BrowserstackDriver.class.getName();
+        switch (System.getProperty("mobile")) {
+            case "browserstack":
+                Configuration.browser = BrowserstackDriver.class.getName();
+                break;
+            case "emulator":
+                Configuration.browser = EmulatorDriver.class.getName();
+                break;
+        }
         Configuration.browserSize = null;
     }
 
@@ -37,7 +36,6 @@ public class TestBase {
     void addAttachments() {
         String sessionId = sessionId().toString();
         Attach.pageSource();
-        Attach.addVideo(sessionId);
-        //if (!System.getProperty("mobile").equals("emulator")) Attach.addVideo(sessionId);
+        if (!System.getProperty("mobile").equals("emulator")) Attach.addVideo(sessionId);
     }
 }
