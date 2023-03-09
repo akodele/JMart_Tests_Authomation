@@ -32,6 +32,7 @@ public class MainPage {
     @Step("Выбираем город {0} и закрываем модальное окно с новинкой")
     public MainPage selectCity(String cityName){
         citySelectModal.citySelectAndClick(cityName);
+
         return this;
     }
 

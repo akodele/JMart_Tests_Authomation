@@ -1,18 +1,24 @@
 package web.pages;
 
+import com.codeborne.selenide.ClickOptions;
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import io.qameta.allure.Step;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.CollectionCondition.*;
-import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$$x;
+import static com.codeborne.selenide.Selenide.sleep;
 
 public class ProductsListingPage {
     ElementsCollection
             productsList = $$x("//div[contains(@class,'jMpxUt lnQNbf')]"),
             productsAddToCartButtons = $$x("//button[contains(@class,'cxEWlG')]"),
+            productsAddToCartText = $$x("//button[contains(@class,'cxEWlG')]/div"),
             categoriesList = $$x("//ul/li/div[contains(@class,'JAnzX')]"),
-            filtersList  = $$x("//div[contains(@class,'hFtCop jnKiqT')]");
+            filtersList  = $$x("//div[contains(@class,'hFtCop jnKiqT')]"),
+            products = $$x("//div[contains(@class,'jMpxUt lnQNbf')]");
 
     @Step("Проверка наличия категории в листинге")
     public ProductsListingPage categoriesListCheck() {
@@ -37,7 +43,10 @@ public class ProductsListingPage {
 
     @Step("Нажимаем на кнопку \"В корзину\"")
     public ProductsListingPage selectAddToCart() {
-        productsAddToCartButtons.first().click();
+        products.get(0).scrollTo();
+        sleep(5000);                      //Duration не подошел, после click не открывается модальное окно
+        productsAddToCartButtons.get(0).click(ClickOptions.usingJavaScript());
+
         return this;
     }
 }

@@ -44,6 +44,5 @@ public class UserTests {
                 profile.getData().getUser().getFirstname());
         Assertions.assertEquals("ЕЛКИН",
                 profile.getData().getUser().getLastname());
-
     }
 }

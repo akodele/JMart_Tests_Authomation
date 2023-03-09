@@ -21,6 +21,7 @@ public class CitySelectModal {
     public void citySelectAndClick(String cityName) {
         if(cities.first().is(appear)){
             cities.findBy(text(cityName)).click();
+
             newSearchNotificationModal.closeNewSearchModal();
         }else {
             newSearchNotificationModal.closeNewSearchModal();
