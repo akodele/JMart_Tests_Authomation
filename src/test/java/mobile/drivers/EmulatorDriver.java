@@ -28,7 +28,6 @@ public class EmulatorDriver implements WebDriverProvider {
 
         UiAutomator2Options options = new UiAutomator2Options();
         options.merge(capabilities);
-        System.out.println(config.mobileDevice());
         options.setAutomationName(ANDROID_UIAUTOMATOR2)
                 .setPlatformName(config.mobilePlatformName())
                 .setDeviceName(config.mobileDevice())
@@ -42,7 +41,6 @@ public class EmulatorDriver implements WebDriverProvider {
 
     private String getAppPath() {
         String appPath = config.mobileAppPath();
-        System.out.println(config.mobileAppPath());
         File app = new File(appPath);
         return app.getAbsolutePath();
     }
