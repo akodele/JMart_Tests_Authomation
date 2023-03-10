@@ -22,6 +22,8 @@ public class TestBase {
             case "emulator":
                 Configuration.browser = EmulatorDriver.class.getName();
                 break;
+            default:
+                Configuration.browser = BrowserstackDriver.class.getName();
         }
         Configuration.browserSize = null;
     }
