@@ -13,14 +13,19 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class TestBase {
 
+    private static String mobile=System.getProperty("mobile");
     @BeforeAll
     static void beforeAll() {
-        switch (System.getProperty("mobile")) {
+        if (mobile==null){
+            mobile="emulator";
+        }
+        switch (mobile) {
+            case "browserstack":
+                Configuration.browser = BrowserstackDriver.class.getName();
+                break;
             case "emulator":
                 Configuration.browser = EmulatorDriver.class.getName();
                 break;
-            default:
-                Configuration.browser = BrowserstackDriver.class.getName();
         }
         Configuration.browserSize = null;
     }

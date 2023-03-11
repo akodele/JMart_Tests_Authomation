@@ -46,7 +46,7 @@ public class JusanTests extends TestBase {
             $(id("kz.tsb.app24.debug:id/searchEditText")).sendKeys("Apple");
         });
         step("Проверить отображение результатов поиска в Jusan Магазине, помимо результатов в банке", () -> {
-            $$(id("kz.tsb.app24.debug:id/nameTextView")).get(17).shouldHave(Condition.text("Jusan Магазин"));
+            $(xpath("//androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.TextView")).shouldHave(Condition.text("Jusan Магазин"));
         });
     }
 
