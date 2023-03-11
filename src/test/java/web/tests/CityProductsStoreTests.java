@@ -34,7 +34,7 @@ public class CityProductsStoreTests extends TestBase {
         return Stream.of(
                 Arguments.of("Алматы", List.of("A-Store", "Carefood", "Садыхан",
                         "Europharma", "Flamingo", "Овощной",
-                        "Mясной Boszhan","Дәмді ет", "Riza Herb",
+                        "Мясной Boszhan","Дәмді ет", "Riza Herb",
                         "Tvoy.kz", "Зоомагазин ZOOKORM",
                         "Зоомагазин Zoo KING", "Зоомагазин Котопёс", "Epicure",
                         "Moonyalmaty", "Аптека SMART",
@@ -42,11 +42,11 @@ public class CityProductsStoreTests extends TestBase {
                         "Elitalco", "Кондитерская Caramel", "Mfood.kz",
                         "Шымбулак Water", "Продукция Цесна",
                         "Магазин XO","Accio Store","SYILA",
-                        "Small","TALHIZ","Аптека Фатима Фарм"
+                        "TALHIZ","Аптека Фатима Фарм"
                 )),
                 Arguments.of("Астана", List.of("Астыкжан", "INTERFOOD ASTANA", "JIDEK.KZ",
-                        "Зоомагазин KazZooMir", "Europharma", "Tvoy.kz (Астана)",
-                        "Accio Store","2.Детский магазин ВebekAstana","4.Cупермаркет Made In Korea (Нур-Султан)"))
+                        "Europharma", "Мясная лавка №1", "Tvoy.kz (Астана)",
+                        "Accio Store","2.Детский магазин ВebekAstana"))
         );
     }
     @Tag("web_test")

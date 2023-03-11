@@ -16,9 +16,6 @@ public class TestBase {
     @BeforeAll
     static void beforeAll() {
         switch (System.getProperty("mobile")) {
-            case "browserstack":
-                Configuration.browser = BrowserstackDriver.class.getName();
-                break;
             case "emulator":
                 Configuration.browser = EmulatorDriver.class.getName();
                 break;

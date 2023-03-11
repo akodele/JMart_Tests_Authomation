@@ -8,13 +8,13 @@ import java.time.Duration;
 import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Selenide.$x;
 
-public class NewSearchNotificationModal {
+public class NewNotificationModal {
     SelenideElement
-            newSearchNotificationModal = $x("//div[contains(@class,'djmGIm')]"),
+            newNotificationModal = $x("//div[contains(@class,'fFDdfv')]"),
             closeButton=$x("//div[contains(@class,'bFrvYP')]");
 
     public void closeNewSearchModal() {
-        if(newSearchNotificationModal.shouldBe(Condition.visible, Duration.ofSeconds(30)).is(appear)){
+        if(newNotificationModal.shouldBe(Condition.visible, Duration.ofSeconds(30)).is(appear)){
             closeButton.click();
         }
     }

@@ -1,6 +1,7 @@
 package web.pages;
 
 import com.codeborne.selenide.CollectionCondition;
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
@@ -24,6 +25,8 @@ public class StoresPage {
 
     @Step("Проверяем отображение продуктовых магазинов")
     public void checkStoresNames(List<String> storeNames){
-        storeNameElements.shouldHave(CollectionCondition.texts(storeNames));
+        for (int i=0;i<storeNames.size();i++){
+            storeNameElements.get(i).shouldHave(Condition.text(storeNames.get(i)));
+        }
     }
 }

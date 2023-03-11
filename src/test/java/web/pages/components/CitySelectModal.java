@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class CitySelectModal {
 
-    NewSearchNotificationModal newSearchNotificationModal=new NewSearchNotificationModal();
+    NewNotificationModal newNotificationModal =new NewNotificationModal();
 
     SelenideElement
             cityOfStores=$x("//div[contains(@class,'fAvePO')]");
@@ -22,9 +22,9 @@ public class CitySelectModal {
         if(cities.first().is(appear)){
             cities.findBy(text(cityName)).click();
 
-            newSearchNotificationModal.closeNewSearchModal();
+            newNotificationModal.closeNewSearchModal();
         }else {
-            newSearchNotificationModal.closeNewSearchModal();
+            newNotificationModal.closeNewSearchModal();
             cityOfStores.click();
             cities.findBy(text(cityName)).click();
         }

@@ -4,7 +4,7 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import web.pages.components.CitySelectModal;
-import web.pages.components.NewSearchNotificationModal;
+import web.pages.components.NewNotificationModal;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$$x;
@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class MainPage {
     CitySelectModal citySelectModal=new CitySelectModal();
-    NewSearchNotificationModal newSearchNotificationModal=new NewSearchNotificationModal();
+    NewNotificationModal newNotificationModal =new NewNotificationModal();
 
     SelenideElement
             selectedCity=$x("//div[contains(@class,'ipRYCv')]"),
