@@ -1,10 +1,11 @@
 {
   "base": {
-    "project": "JMart_UI_API_Mobile_Tests_Authomation",
-    "environment": "JMart",
-    "comment": "Test results",
-    "reportLink": "",
+    "project": "${JOB_BASE_NAME}",
+    "environment": "kz.jmart",
+    "comment": "@Akodele",
+    "reportLink": "${BUILD_URL}",
     "language": "en",
+    "messenger": "telegram",
     "allureFolder": "allure-report/",
     "enableChart": true
   },
