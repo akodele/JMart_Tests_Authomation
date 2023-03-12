@@ -2,3 +2,6 @@
 \.idea
 \build
 !**/src/test/**
+/notifications/
+/gradle/
+/allure-report/

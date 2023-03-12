@@ -1,10 +1,10 @@
 {
   "base": {
     "project": "JMart_UI_API_Mobile_Tests_Authomation",
-    "environment": "",
+    "environment": "JMart",
     "comment": "Test results",
     "reportLink": "",
-    "language": "ru",
+    "language": "en",
     "allureFolder": "allure-report/",
     "enableChart": true
   },
