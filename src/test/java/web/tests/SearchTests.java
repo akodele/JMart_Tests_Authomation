@@ -42,4 +42,19 @@ public class SearchTests extends TestBase{
         qrModal.
                 qrTitleShouldBeVisible();
     }
+
+    @Tag("web_test")
+    @Feature("Вывод результатов поиска и возможность добавления в корзину товара-результата")
+    @ValueSource(strings = {"Apple","Samsung"})
+    @ParameterizedTest(name = "Проверка наличия офферов у первого товара-результата поиска")
+    public void checkOffersOfFirstProduct(String searchText) {
+        open("/");
+        mainPage.
+                selectCity("Алматы").
+                search(searchText);
+        productsListingPage.
+                selectAddToCart().
+                clickOnFirstProductOnListing().
+                firstProductOffersCheck();
+    }
 }
