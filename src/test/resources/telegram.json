@@ -1,9 +1,9 @@
 {
   "base": {
-    "project": "${JOB_BASE_NAME}",
+    "project": "JMart_Tests_Authomation",
     "environment": "kz.jmart",
     "comment": "@Akodele",
-    "reportLink": "${BUILD_URL}",
+    "reportLink": "https://jenkins.autotests.cloud/job/akodele-jmart-diploma/",
     "language": "en",
     "messenger": "telegram",
     "allureFolder": "allure-report/",
