@@ -15,7 +15,6 @@ public class ProductsListingPage {
     ElementsCollection
             productsList = $$x("//div[contains(@class,'jMpxUt lnQNbf')]"),
             productsAddToCartButtons = $$x("//button[contains(@class,'cxEWlG')]"),
-            productsAddToCartText = $$x("//button[contains(@class,'cxEWlG')]/div"),
             categoriesList = $$x("//ul/li/div[contains(@class,'JAnzX')]"),
             filtersList  = $$x("//div[contains(@class,'hFtCop jnKiqT')]"),
             products = $$x("//div[contains(@class,'jMpxUt lnQNbf')]");
@@ -44,9 +43,15 @@ public class ProductsListingPage {
     @Step("Нажимаем на кнопку \"В корзину\"")
     public ProductsListingPage selectAddToCart() {
         products.get(0).scrollTo();
-        sleep(5000);                      //Duration не подошел, после click не открывается модальное окно
+        sleep(5000);                      //Duration не подошел, после click не открывается модальное окно без sleep
         productsAddToCartButtons.get(0).click(ClickOptions.usingJavaScript());
-
         return this;
     }
+
+//    @Step("Нажимаем на карточку товара")
+//    public ProductsListingPage productsListCheck() {
+//        productsList.
+//                shouldHave(sizeNotEqual(0), sizeGreaterThanOrEqual(1));
+//        return this;
+//    }
 }

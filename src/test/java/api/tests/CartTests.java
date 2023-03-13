@@ -1,7 +1,6 @@
 package api.tests;
 
 import api.AuthAsClient;
-import api.models.AuthDataModel;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;

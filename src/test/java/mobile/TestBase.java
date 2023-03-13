@@ -17,7 +17,7 @@ public class TestBase {
     @BeforeAll
     static void beforeAll() {
         if (mobile==null){
-            mobile="emulator";
+            mobile="browserstack";
         }
         switch (mobile) {
             case "browserstack":
