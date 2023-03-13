@@ -18,6 +18,7 @@ public class TestBase {
     static void beforeAll() {
         if (mobile==null){
             mobile="browserstack";
+            System.setProperty("mobile", "browserstack");
         }
         switch (mobile) {
             case "browserstack":
